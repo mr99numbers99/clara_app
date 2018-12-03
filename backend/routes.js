@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   res.send('/');
 });
 
-router.get('/csg/woche',(req, res) => {
+router.get('/week',(req, res) => {
   let week = clara_api.get_weeks(); 
   week.then((week_result) => {
     res.send(JSON.stringify(week_result));
@@ -14,10 +14,12 @@ router.get('/csg/woche',(req, res) => {
 
 });
 
-router.get('/csg/request/:week/:classes',(req,res) => {
-  let classes = req.params.classes;
+router.get('/query/:week/:class_id',(req,res) => {
+  let class_id = req.params.class_id;
   let week = req.params.week;
-  clara_api.query(week,classes); 
+  clara_api.query(week,class_id); 
+
+  res.send('Working on the queries');
 });
 
 //this MUST be the last Route

@@ -1,6 +1,6 @@
 const fetch = require('request-promise');
 const cheerio = require('cheerio');
-
+const fs = require('fs');
 //get_weeks get the current week in ascending order
 function get_weeks () {
 	const navbar =  {
@@ -24,10 +24,15 @@ function get_weeks () {
 		});
 }
 
-function query(week,classes) {
-	const class_list = require('./data/class_names.json');
-	let url = '';
-	console.log(class_list);
+async function query( week , class_id ) {
+	const class_list_file = fs.readFileSync('./data/class_names.json');
+	const class_list = JSON.parse(class_list_file);
+	// get it working with EF as a start 
+
+	//search for classes id and prepare query 
+	const base_query_uri = `https://www.clara-online.de/vertretung/Plan_SUS/${week}/w/w000${class_id}.htm`;
+	//append id + week 
+	console.log(base_query_uri);
 }
 
 module.exports = {

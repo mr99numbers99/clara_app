@@ -5,8 +5,8 @@ const path = require('path');
 
 // Link Routes with routes.js
 app.use('/',router);
-app.use('/csg/woche', router);
-app.use('/csg/request/:week/:classes',router);
+app.use('/week', router);
+app.use('/query/:week/:class_id',router);
 
 
 //last route
