@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "CSG_frontend",
+    "description": "This project is really great.",
+    "slug": "CSG_frontend",
+    "privacy": "public",
+    "sdkVersion": "30.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "androidStatusBarColor": "#334393",
+    "android": {
+      "package": "com.yourcompany.yourappname"
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    }
+
+  }
+}
